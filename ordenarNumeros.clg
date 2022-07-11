@@ -1,0 +1,45 @@
+algoritmo ordenarNumeros;
+//aluno:Felipe Fernandes Brandim - 202016201
+// Síntese: Faça um algoritmo que seja capaz de ordenar três números inteiros. 
+//  Objetivo: fazer um programa pra reorganizar os números
+//  Entrada : três números inteiros
+//  Saída   : números ordenados
+
+
+principal
+	// Declarações
+inteiro num1,num2,num3;
+	// Instruções
+leia(num1);
+leia(num2);
+leia(num3);
+
+	se ((num1)>=(num2)e(num1)>=(num3))entao
+		se(num2>=num3)entao
+			escreval(num3," ",num2," ",num1);
+		senao	
+			escreval(num2," ",num3," ",num1);
+		fimSe
+		
+	fimSe
+
+	se ((num2)>(num1)e(num2)>=(num3))entao
+		se(num1>=num3)entao
+			escreval(num3," ",num1," ",num2);
+		senao	
+			escreval(num1," ",num3," ",num2);
+		fimSe
+		
+	fimSe
+
+	se ((num3)>(num1)e(num3)>=(num2))entao
+		se(num1>=num2)entao
+			escreval(num2," ",num1," ",num3);
+		senao	
+			escreval(num1," ",num2," ",num3);
+		fimSe
+		
+	fimSe
+
+
+fimPrincipal

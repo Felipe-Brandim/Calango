@@ -1,0 +1,21 @@
+algoritmo distanciaEntrePontos;
+// Aluno: Felipe Fernandes Brandim - 202016201
+// Síntese: Escreva um algoritmo para calcular e mostrar a distância entre dois pontos p1 (x1, y1) e p2 (x2, y2) no plano.
+//  Objetivo: Receber coordenadas de dois pontos e retornar a distância
+//  Entrada : quatro valores reais correspondentes ´s coordenadas de dois pontos
+//  Saída   : Distancia
+
+
+principal
+	// Declarações
+real x1,y1,x2,y2,distancia;
+	// Instruções
+leia(x1);
+leia(y1);
+leia(x2);
+leia(y2);
+
+distancia= raizQuadrada(exp( (x2-x1), 2) + exp( (y2-y1), 2));
+
+escreval("DISTANCIA = ",distancia:4:2);
+fimPrincipal

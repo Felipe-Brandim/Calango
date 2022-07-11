@@ -1,0 +1,47 @@
+algoritmo fibonacciDuplas;
+//Aluno: Felipe Fernandes Brandim- 202016201
+//  Objetivo: Achar uma sequência finonacci
+//  Entrada : Um número inteiro
+//  Saída   : Sequência de números inteiros
+
+
+principal
+	// Declarações
+	inteiro N,i,ant1,ant2,prox;
+	ant1=1;
+	ant2=1;
+	i=3;
+
+	// Instruções
+	leia(N);
+
+	se ((N)<=0)entao
+		escreval("VALOR DE N INCORRETO");
+	senao
+		fibonacci(N);
+		escreval("");
+	fimSe
+fimPrincipal
+
+procedimento fibonacci (inteiro n)
+	inteiro i,ant1,ant2,prox;
+	ant1=1;
+	ant2=1;
+	i=3;
+	se ((n)==1) entao
+		escreva(ant1);
+	senao
+		se (n==2) entao
+			escreva(ant1," ",ant2);
+		senao
+			escreva(ant1," ",ant2);
+			enquanto ((i) <= (n)) faca
+				prox= ant1+ant2;
+				escreva(" ",prox);
+				ant2=ant1;
+				ant1=prox;
+				i=i+1;
+			fimEnquanto
+		fimSe
+	fimSe
+fimProcedimento

@@ -1,0 +1,26 @@
+algoritmo mediaPonderada;
+// Síntese: Faça um algoritmo que calcule e mostre a média ponderada de três notas. Caso alguma das notas ou pesos seja inferior a zero ou então a soma dos pesos não seja igual a 10, deve ser mostrada na saída a palavra ERRO.
+//  Objetivo:  Faça um algoritmo que calcule e mostre a média ponderada de três notas.
+//  Entrada :A entrada começa com a primeira nota e seu peso, depois a segunda nota e seu peso, assim por diante. Todas as entradas são valores reais.
+//  Saída   : A saída será a média ponderada.
+
+principal
+	// Declarações
+real n1,n2,n3,p1,p2,p3,mediaPonderada;
+	// Instruções
+leia(n1);
+leia(p1);
+leia(n2);
+leia(p2);
+leia(n3);
+leia(p3);
+	se  (( p1)+(p2)+(p3) != 10 ou (n1)<0 ou (n2)<0 ou  (n3)<0 ou (p1)<0 ou (p2)<0 ou (p3)<0)   entao 
+		escreval("ERRO"); 
+   	senao
+		mediaPonderada = ((p1*n1)+(p2*n2)+(p3*n3))/(p1+p2+p3);
+		escreval("MEDIA PONDERADA = ",mediaPonderada:4:2);
+	fimSe
+	
+fimPrincipal
+
+//Código do orgulho

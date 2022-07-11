@@ -1,0 +1,17 @@
+algoritmo perimetroDaCircunferencia;
+// Síntese: Escreva um algoritmo que calcule o perímetro de uma circunferência dado seu raio R.
+//  Objetivo:  Calcular o perimetro de uma circunferência de raio R.
+//  Entrada : Valor real maior que zero do raio R.
+//  Saída   : Perimetro da circunferência
+
+
+principal
+	// Declarações
+real Raio,Perimetro;
+	// Instruções
+leia(Raio);
+	// processamento de dados
+Perimetro= (2*pi()*Raio);
+escreval("PERIMETRO = ",Perimetro:4:2);
+
+fimPrincipal

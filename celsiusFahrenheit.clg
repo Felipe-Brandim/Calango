@@ -1,0 +1,19 @@
+algoritmo celsiusFahrenheit;
+// Aluno: Felipe Fernandes Brandim - 202016201
+// Síntese:  Faça um algoritmo que receba uma temperatura em Celsius, calcule e mostre o valor da temperatura correspondente em Fahrenheit.
+//  Objetivo: Receber uma temperatura em celcius e dar a resposta em farenheit
+//  Entrada : Um número real representando a temperatura em celsius
+//  Saída   : Um número real representando a temperatura em celsius
+
+
+principal
+	// Declarações
+	real Ce,Fa;
+	// Instruções - Coleta de informações
+	escreva("Digite a temperatura em Celcius");
+	leia(Ce);
+	//processamento de dados
+Fa= (9*Ce/5+32);
+	//resultado
+	escreval("FAHRENHEIT = ",Fa:4:1);
+fimPrincipal

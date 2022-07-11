@@ -1,0 +1,36 @@
+algoritmo modFatorial ;
+// Aluno: Felipe Fernandes Brandim - 20216201
+//  Objetivo:
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+	inteiro x,y;
+	real fat;
+
+	// Instruções
+	leia(x);
+	leia(y);
+	se (x<0)entao
+		escreval("VALOR DE X INCORRETO");
+	fimSe
+	se(y<0)entao
+		escreval("VALOR DE Y INCORRETO");
+	fimSe
+	se(x>=0 e y>=0)entao
+		fat=fatorial(x+y)/raizQuadrada(fatorial(x)+fatorial(y));
+		escreval("RESULTADO = ",fat::3);
+	fimSe
+fimPrincipal
+
+funcao inteiro fatorial(inteiro n)
+	inteiro i,fat;
+	fat=1;
+	para(i de n ate 1 passo-1)faca
+		fat=fat*i;
+
+	fimPara
+	retorna fat;
+fimFuncao

@@ -1,0 +1,44 @@
+algoritmo contaDeRestaurante;
+//aluno:Felipe Fernandes Brandim - 202016201
+//  Objetivo:  Elaborar um algoritmo que calcule o valor total da conta, considerando a quantidade de homens e mulheres no grupo de amigos e a quantidade de bebidas que cada um pediu.
+//  Entrada : número inteiro indicando a quantidade de amigos, um caracter de gênero e outro inteiro pra quantidadde de  bebidas
+//  Saída   : Valor total da conta
+
+
+principal
+	// Declarações
+	inteiro bebidas,amigos,i;
+	real valorTotal,conta;
+	caracter genero;
+	
+	// Instruções
+	leia(amigos);
+	leiaCaracter(genero);
+	leia(bebidas);
+
+	se((genero)=='H' ou (genero)=='h')entao
+		conta=39.90+bebidas*4.50;
+	senao
+		se ((genero)=='M' ou (genero)=='m')entao
+			conta=34.90+bebidas*4.50;
+		fimSe
+	fimSe
+
+	para(i de 1 ate amigos-1 passo 1)faca
+		leiaCaracter(genero);
+		leia(bebidas);
+		se ((genero)=='H' ou (genero)=='h')entao
+  			conta=conta+39.90+bebidas*4.50;	
+		senao
+			se ((genero)=='M' ou (genero)=='m')entao
+  				conta=conta+34.90+bebidas*4.50;	
+  			fimSe
+		fimSe
+		
+	
+	fimPara
+
+	valorTotal=conta+(conta * 0.1);
+
+	escreval("VALOR TOTAL = R$ ",valorTotal:4:2);
+fimPrincipal

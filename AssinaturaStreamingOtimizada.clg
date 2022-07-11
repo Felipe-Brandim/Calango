@@ -1,0 +1,67 @@
+algoritmo assinaturaStreaming;
+//Aluno: Felipe Fernandes Brandim - 202016201
+// Síntese: Elabore um algoritmo que calcule o valor da assinatura de um cliente com base nas preferências de tela e qualidade de vídeo.
+//  Objetivo:  Fazer um algoritmo pra calcular o valor de assinaturas de um serviço de streaming
+//  Entrada : número inteiro maior que zero representando a quantidade de telas, caractere indicando se o conteúdo é em 4K.
+//  Saída   : Valor da assinatura ou assinatura indisponível.
+principal
+	// Declarações
+inteiro quantidadeTelas;
+real valorFinal;
+caracter conteudo4k,SouN;
+valorFinal=0;
+	// Instruções
+leia(quantidadeTelas);
+leiaCaracter(conteudo4k);
+SouN=maiusculoCaracter(conteudo4k);
+//assinatura indisponível
+	
+	
+//decisão
+	se ((quantidadeTelas)>0 e (quantidadeTelas)<= 2) entao
+		valorFinal = 15.99 *(quantidadeTelas);
+		
+		se ((SouN)=='S') entao
+			valorFinal= valorFinal*1.17;
+		senao
+			se((SouN)=='N') entao
+				valorFinal= valorFinal;
+			fimSe
+		fimSe
+		
+		
+ senao
+	 se ((quantidadeTelas)>0 e(quantidadeTelas)<=4)entao
+		    valorFinal= 10.99 *(quantidadeTelas);
+		    se ((SouN)=='S') entao
+			valorFinal= valorFinal*1.17;
+		senao
+			se((SouN)=='N') entao
+				valorFinal= valorFinal;
+			fimSe
+		fimSe
+			
+	 senao
+		   se((quantidadeTelas)>0 e(quantidadeTelas)>=5)entao
+		   		valorFinal= 8.99 *(quantidadeTelas);
+		   		se ((SouN)=='S') entao
+				valorFinal= valorFinal*1.17;
+		senao
+			se((SouN)=='N') entao
+				valorFinal= valorFinal;
+			fimSe
+		fimSe
+				
+		 		   	
+			   	
+		   fimSe
+	 fimSe
+ fimSe
+
+	se(((quantidadeTelas)>0 e (conteudo4k)=='S') ou ((quantidadeTelas)>0 e (conteudo4k)=='s') ou ((quantidadeTelas)>0 e (conteudo4k)=='n')ou ((quantidadeTelas)>0 e (conteudo4k)=='N'))entao
+		escreval("ASSINATURA = R$ ",valorFinal:4:2);
+ senao
+		escreval("ASSINATURA INDISPONIVEL!");	
+  fimSe	
+	
+fimPrincipal

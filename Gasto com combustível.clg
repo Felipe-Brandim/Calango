@@ -1,0 +1,30 @@
+algoritmo GastocomCombustivel;
+// Aluno: Felipe Fernandes Brandim - 202016201
+// Síntese: Algoritmo que calcula e mostra a distância total percorrida por um veículo e o valor médio gasto com combustível no trajeto. 
+//  Objetivo: Calcular a distância percorrida por um veículo e o valor médio gasto em combustível no trajeto
+//  Entrada : Consumo médio, velocidade média, Quantidade de horas, Preço do litro da gasolina
+//  Saída   : Valores da distância percorrida e o Valor gasto
+
+
+principal
+	// Declarações
+	real consumoMedio,velocidadeMedia,precoLitro,distanciaPercorrida,valorGasto;
+	inteiro quantidadeHoras;
+	// Instruções - Coleta de informações
+		escreval("Digite o consumo médio do veículo (KM/L): ");
+		leia(consumoMedio);
+		escreval("Digite o valor da velocidade média do veículo no trajeto (KM/H): ");
+		leia(velocidadeMedia);
+		escreval("Digite a quantidade de horas que a viagem durou: ");
+		leia(quantidadeHoras);
+		escreval("Digite o preço que custa o litro do comustível (R$): ");
+		leia(precoLitro);
+
+		//Processamento de dados
+		distanciaPercorrida = (velocidadeMedia * quantidadeHoras);
+		valorGasto = (distanciaPercorrida * precoLitro/consumoMedio);
+
+		escreval("DISTANCIA PERCORRIDA(KM) = ",distanciaPercorrida:4:1 );
+		escreval("VALOR GASTO(REAIS) = ",valorGasto:4:1);
+	
+fimPrincipal

@@ -1,0 +1,34 @@
+algoritmo maiorComissaoEmenorComissao;
+//aluno:Felipe Fernandes Brandim - 202016201
+// Síntese: fazer um algoritmo para calcular qual dentre os vendedores digitados tem a maior e a menor comissão de vendas
+//  Objetivo:  
+//  Entrada : numero inteiro representando o código do vendedor e numero real representando o valor total da comissão
+//  Saída   : vendedor com maior comissão e vendedor com menor comissão
+
+
+principal
+	// Declarações
+	inteiro nVendedor,codigVendedor,i,codigMaior,codigMenor;
+	real vComissao,comissaoMaior,comissaoMenor;
+	// Instruçõeso
+	leia(nVendedor);
+	comissaoMaior=0;
+	comissaoMenor=10000;
+	codigMenor=0;
+	para(i de 1 ate nVendedor passo 1)faca
+		leia(codigVendedor);
+		leia(vComissao);
+		se(vComissao > comissaoMaior)entao
+			comissaoMaior= vComissao;
+			codigMaior = codigVendedor;
+		fimSe
+		
+		se(vComissao < comissaoMenor)entao
+			comissaoMenor = vComissao;
+			codigMenor = codigVendedor;
+		fimSe
+	fimPara
+
+	escreval("VENDEDOR COM MAIOR COMISSAO = ",codigMaior);
+	escreval("VENDEDOR COM MENOR COMISSAO = ",codigMenor);
+fimPrincipal

@@ -1,0 +1,63 @@
+algoritmo verificarData;
+//aluno: Felipe Fernandes Brandim - 202016201
+// Síntese
+//  Objetivo:  verificar se uma data está correta ou não
+//  Entrada : 5 valores inteiros representando dia, mes, ano, horas, minutos
+//  Saída   : Data correta ou incorreta.
+
+
+principal
+	// Declarações
+	inteiro dia, mes,ano,hora,minuto;
+	// Instruções
+	leia(dia);
+	leia(mes);
+	leia(ano);
+	leia(hora);
+	leia(minuto);
+
+	se(valida_data(dia,mes,ano,hora,minuto)==verdadeiro)entao
+		escreval("DATA CORRETA");
+	senao
+		escreval("DATA INCORRETA");
+	fimSe	
+
+fimPrincipal
+
+funcao logico valida_data(inteiro dia,inteiro mes, inteiro ano, inteiro hora, inteiro minuto)
+	se((hora < 0 ou hora >23)ou(minuto < 0 ou minuto > 59)ou (dia <= 0 ou dia >31) ou (mes <=0 ou mes >12) ou (ano < 0))entao
+		retorna falso;
+	senao
+		
+		se((mes==4 ou mes==6 ou mes==9 ou mes==11) e ( dia<=30))entao
+			retorna verdadeiro;
+		senao
+			se(mes==1 ou mes==3 ou mes==5 ou mes==7 ou mes==8 ou mes==10 ou mes==12)entao
+				retorna verdadeiro;
+			senao
+				//se chegou aqui, o mês é 2(fevereiro)
+				// mes pode ter 28 ou 29 dias, caso o ano seja bissexto
+				se(mes==2 e dia<=28)entao
+					retorna verdadeiro;
+				senao	
+					se(ehBissexto(ano)== verdadeiro)entao
+						retorna verdadeiro;
+					senao
+						retorna falso;	
+					fimSe
+				fimSe		
+			fimSe	
+		fimSe	
+		
+	fimSe
+fimFuncao
+
+funcao logico ehBissexto(inteiro ano)
+	//testar se o ano é bissexto
+	se((ano%4==0) e (ano%100!=0) ou (ano%400==0))entao
+		retorna verdadeiro;
+	senao
+		retorna falso;
+	fimSe
+fimFuncao
+

@@ -1,0 +1,40 @@
+algoritmo consumoEnergia;
+
+// Aluno: Felipe Fernandes Brandim - 202016201
+// Síntese:  Faça um algoritmo que receba a quantidade de KW consumido por um cliente e informe o valor a ser pago.
+//  Objetivo: receber o valor em kw e retornar o valor a ser pago em Reais
+//  Entrada : Um valor inteiro positivo representando o consumo de energia em KW.
+//  Saída   : valor em reais a ser pago pelo cliente.
+
+
+
+principal
+	// Declarações
+real consumoEnergia, valorPago;
+	
+	// Instruções
+leia(consumoEnergia);
+
+se ((consumoEnergia) <= 50) entao
+		valorPago = 0.1918 * consumoEnergia;
+ senao
+	 se (( consumoEnergia)<=100)entao
+		    valorPago= 0.3877 * consumoEnergia;
+	 senao
+		   se((consumoEnergia)<=200)entao
+		   		valorPago=0.5566*consumoEnergia;
+		 senao
+		 		se((consumoEnergia)>200)entao
+		 			valorPago=0.7834*consumoEnergia;
+			   	 	
+			   		
+			   		
+			   		
+			   	fimSe	
+		   	fimSe
+	 fimSe
+ fimSe
+escreval("VALOR = ",valorPago:4:2);
+fimPrincipal
+
+

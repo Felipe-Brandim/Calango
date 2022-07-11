@@ -1,0 +1,21 @@
+algoritmo tempoClassificacao;
+// Aluno: Felipe Fernandes Brandim - 202016201
+// Síntese: Escreva um algoritmo para calcular o tempo final da volta de um piloto, descontando penalidades.
+//  Objetivo: Receber tempo da volta, as vezes que o piloto saiu da pista e as vezes que ele trocou pneu, retornando ao fim o tempo final.
+//  Entrada : Receber tempo da volta, as vezes que o piloto saiu da pista e as vezes que ele trocou pneu
+//  Saída   : retorna o tempo final.
+
+principal
+	// Declarações
+real tempoDaVolta,tempoFinal;
+inteiro saidasDaPista,trocaDePneu;
+	// Instruções
+leia(tempoDaVolta);
+leia(saidasDaPista);
+leia(trocaDePneu);
+//Processamento de dados
+tempoFinal= tempoDaVolta + 500 * saidasDaPista;
+tempoFinal= tempoFinal * exp(1.03,trocaDePneu);
+escreval("TEMPO FINAL = ",tempoFinal:4:2, " ms");
+
+fimPrincipal

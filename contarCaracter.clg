@@ -1,0 +1,59 @@
+algoritmo contarCaracter;
+//Aluno: Felipe Fernandes Brandim - 202016201
+// Síntese
+//  Objetivo:  contar caracter e informar seu tipo em um texto
+//  Entrada : um tesxto
+//  Saída   :Uma mensagem com as quantidades de acordo com o tipo de caracter
+
+
+principal
+		// Declarações
+	texto sequencia;
+	inteiro i;
+	caracter c;
+	inteiro contMaiuscula,contMinusculo,contNumero,contSimbolo;
+	contMaiuscula=0;
+	contMinusculo=0;
+	contNumero=0;
+	contSimbolo=0;
+		// Instruções
+	//entrada de dados:
+	leia(sequencia);
+	
+	//mostrar quantidade de caracteres do texto
+	
+	para (i de 0 ate tamanhoTexto(sequencia)-1 passo 1) faca
+		//pegar o caracter texto
+		c=caracterTexto(sequencia,i);
+		//verificar se o caracter é uma letra maiuscula, atualizar o Contador
+		se(caracterAscii(c)>=65 e caracterAscii(c)<=90)entao
+			contMaiuscula=contMaiuscula+1;
+		senao
+			//verificar se é uma letra minuscula
+			se(caracterAscii(c)>=97 e caracterAscii(c)<=122)entao
+				contMinusculo=contMinusculo+1;
+				
+				//verificar se é numero
+			senao
+				se(caracterAscii(c)>=48 e caracterAscii(c)<=57)entao
+					contNumero=contNumero+1;
+					
+					
+				senao
+					contSimbolo=contSimbolo+1;
+				fimSe
+			fimSe
+			
+		fimSe	
+		
+		// senão verificar se é uma letra maiuscula
+		//senão verificar se o caracter é um número
+		//senão, considerar que o caracter é um símbolo
+	fimPara
+	//saída
+	escreval("QUANTIDADE DE CARACTERES = ",tamanhoTexto(sequencia));
+	escreval("QUANTIDADE DE MAIUSCULAS = ",contMaiuscula);
+	escreval("QUANTIDADE DE MINUSCULAS = ",contMinusculo);
+	escreval("QUANTIDADE DE NUMEROS = ",contNumero);
+	escreval("QUANTIDADE DE SIMBOLOS = ",contSimbolo);
+fimPrincipal

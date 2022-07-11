@@ -1,0 +1,42 @@
+algoritmo somaeMultiplicacaoDeDivisores;
+// Aluno: Felipe Fernandes Brandim - 202016201
+//  Objetivo: elabore um algoritmo que leia um número e mostre a soma e a multiplicação dos seus divisores.
+//  Entrada : número inteiro
+//  Saída   : Soma dos divisores e Produto dos divisores
+
+
+principal
+	// Declarações
+	inteiro N;
+	// Instruções
+	leia(N);
+	se ((N)<=0)entao
+		escreval("VALOR DE ENTRADA INCORRETO");
+	fimSe
+	se ((N)>0) entao
+		escreval("SOMA DOS DIVISORES = ",soma_divisores(N));
+		escreval("PRODUTO DOS DIVISORES = ",multiplicacao_divisores(N));
+	fimSe
+fimPrincipal
+
+funcao inteiro soma_divisores (inteiro n)
+	inteiro i,som;
+	som=0;
+	para (i de 1 ate n passo 1)faca
+		se (n%i==0)entao
+			som=som+i;
+		fimSe
+	fimPara
+	retorna som;
+fimFuncao
+
+funcao inteiro multiplicacao_divisores(inteiro n)
+	inteiro i,mult;
+	mult=1;
+	para (i de 1 ate n passo 1) faca
+		se(n%i==0)entao
+			mult= mult*i;
+		fimSe
+	fimPara
+	retorna mult;
+fimFuncao

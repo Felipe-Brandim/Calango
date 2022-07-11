@@ -1,0 +1,29 @@
+algoritmo funcaoSomatorio;
+// Aluno: Felipe Fernandes Brandim - 202016201
+//  Objetivo:  Faça um algoritmo que receba um número e mostre o resultado do somatório S abaixo.
+//  Entrada : inteiro N
+//  Saída   : o somatório dos números ou a mensagem de valor incorreto
+
+
+principal
+	// Declarações
+	inteiro N;
+	// Instruções
+	leia(N);
+	se ((N)<=0) entao
+		escreval("VALOR DE N INCORRETO");
+	fimSe
+	se((N)>0)entao
+		escreval("SOMA = ",somatorio(N)::2);
+	fimSe
+fimPrincipal
+
+funcao real somatorio(real n)
+	inteiro i;
+	real som;
+	som=0;
+	para (i de 1 ate n passo 1)faca
+		som= som+(((i*i)+1)/(i+3));
+	fimPara
+	retorna som;
+fimFuncao

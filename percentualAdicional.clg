@@ -1,0 +1,42 @@
+algoritmo percentualAdicional;
+//Aluno: Felipe Fernandes Brandim (202016201)
+// Síntese: Fazer um algoritmo pra calcular o valor do frete de produtos comprados online.
+//  Objetivo:  adicionar um percentual ao valor do frete para cobrir despesas com seguro. O cálculo do percentual depende da região para onde o produto será despachado
+//  Entrada : valor do produto,valor do frete, regiao 
+//  Saída   : valor final
+
+
+principal
+	// Declarações
+real valorProduto,valorFrete,valorFinal;
+texto regiao;
+
+leia(valorProduto);
+leia(valorFrete);
+leia(regiao);
+
+
+	se(comparaTexto((regiao),"SUDESTE")==0)entao
+		valorFinal= (1.01*valorFrete)+valorProduto;
+	senao
+		se(comparaTexto((regiao),"SUL")==0)entao
+			valorFinal=(1.02*valorFrete)+valorProduto;
+		senao
+			se(comparaTexto((regiao),"CENTRO-OESTE")==0)entao
+				valorFinal=(1.05*valorFrete)+valorProduto;
+			senao
+				se(comparaTexto((regiao),"NORDESTE")==0)entao
+					valorFinal=(1.07*valorFrete)+valorProduto;
+				senao
+					se(comparaTexto((regiao),"NORTE")==0)entao
+						valorFinal=(1.10*valorFrete)+valorProduto;
+					fimSe
+				fimSe
+				
+				
+			fimSe
+		fimSe
+	fimSe
+escreval("VALOR FINAL = ",valorFinal:4:2);
+
+fimPrincipal

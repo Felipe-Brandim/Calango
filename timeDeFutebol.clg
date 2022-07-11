@@ -1,0 +1,39 @@
+algoritmo timeDeFutebol;
+//aluno:Felipe Fernandes Brandim - 202016201
+// Síntese:
+//  Objetivo: 
+//  Entrada : idade,peso e altura de onze jogadores
+//  Saída   : quantos são menores de dezoito, o peso médio e o percentual de jogadores com menos de um e setenta.
+
+
+principal
+	// Declarações
+	inteiro idadeJogador,contMenor18,jogadores,baixinho;
+	real pesoJogador,alturaJogador,pesoMedio,SpesoJogador,percentBaixinho;
+	SpesoJogador=0;
+	contMenor18=0;
+	jogadores=0;
+	baixinho=0;
+	// Instruções
+enquanto (jogadores<11) faca
+		leia(idadeJogador);
+		leia(pesoJogador);
+		leia(alturaJogador);
+		jogadores=jogadores+1;
+		SpesoJogador=SpesoJogador+pesoJogador;
+		se(alturaJogador<1.70)entao
+			baixinho= baixinho+1;
+		fimSe
+		se (idadeJogador <18) entao
+			contMenor18=contMenor18 +1;
+		fimSe	
+fimEnquanto
+	pesoMedio= SpesoJogador/11;
+	percentBaixinho= (baixinho)*100/11;
+
+	//saída
+escreval("JOGADORES COM MENOS DE 18 ANOS = ",contMenor18);
+escreval("PESO MEDIO DOS JOGADORES = ",pesoMedio:4:2);
+escreval("PERCENTUAL COM MENOS DE 1.70m = ",percentBaixinho:4:2);
+
+fimPrincipal

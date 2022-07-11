@@ -1,0 +1,35 @@
+algoritmo quantidadePrimos;
+//Aluno:Felipe Fernandes Brandim - 202016201
+// Síntese:
+//  Objetivo:  fazer um algoritmo que leia números e informem se são impares ou pares
+//  Entrada : números inteiros
+//  Saída   : Quantidade de primos e quantidade de números digitados
+
+
+principal
+	// Declarações
+inteiro N,i,Ndigitado,Nprimos,contDivisores;
+	contDivisores=0;
+	Ndigitado=0;
+	Nprimos=0;
+	
+	// Instruções
+leia(N);
+	enquanto(((N)!=0) e ((N)>1))faca
+		Ndigitado=(Ndigitado)+1;
+		para(i de N ate 1 passo -1)faca
+			se(N%i==0)entao
+				contDivisores=contDivisores+1;
+				
+			fimSe	
+		fimPara
+		se(contDivisores==2)entao
+			Nprimos=Nprimos+1;
+		fimSe
+		contDivisores=0;
+		leia(N);
+	fimEnquanto 
+
+	escreval("NUMEROS DIGITADOS = ",Ndigitado);
+	escreval("NUMEROS PRIMOS = ",Nprimos);
+fimPrincipal
