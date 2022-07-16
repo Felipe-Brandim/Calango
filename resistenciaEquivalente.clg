@@ -1,0 +1,57 @@
+algoritmo resistenciaEquivalente;
+// Aluno: Felipe Fernandes Brandim - 202016201
+//  Objetivo:  calcular a resistencia equivalente em serie e em paralelo em um conjunto de N resistencias
+//  Entrada : As N resistencias
+//  Saída   : O valor da resistencia equivalente em serie e em paralelo
+
+
+principal
+	// Declarações
+	real resistencias[7]; // vetor para armazenar os vetores das resistencias
+	inteiro contResistencias;//variavel que armazena a quantidade de resistencias que forma digitadas
+	real resistenciaDigitada;
+	// Instruções
+	//1)  leitura e contagem de resistencias
+	contResistencias=0;
+	faca
+		leia(resistenciaDigitada);
+		se(resistenciaDigitada > 0)entao
+			resistencias[contResistencias]=resistenciaDigitada;
+			contResistencias=contResistencias+1;
+		fimSe
+	enquanto(resistenciaDigitada > 0);
+
+	//2) chamar uma funcao sua para calcular a resistencia equivalente em serie
+	escreval("VALOR EM SERIE = ",resistencia_serie (resistencias,contResistencias)::2);
+	//3) chamar uma funcao sua para calcular a resistencia equivalente em paralelo
+	escreval("VALOR EM PARALELO = ",resistencia_paralelo(resistencias,contResistencias)::4);
+	
+
+fimPrincipal
+
+funcao real resistencia_serie (real resistencias[],inteiro contResistencias)
+	//declarações
+	inteiro i;
+	real soma;
+	//instruções
+	soma=0;
+	para(i de 0 ate contResistencias-1 passo 1)faca
+		soma= soma+resistencias[i];
+	fimPara	
+
+	retorna soma;
+fimFuncao
+
+funcao real resistencia_paralelo(real resistencias[], inteiro contResistencias)
+	//declarações
+	inteiro i;
+	real resistenciaEquivalente;
+	resistenciaEquivalente=0;
+	//intruções
+	para(i de 0 ate contResistencias-1 passo 1)faca
+		resistenciaEquivalente= resistenciaEquivalente+ (1/resistencias[i]);
+		
+	fimPara
+	resistenciaEquivalente=1/resistenciaEquivalente;
+	retorna resistenciaEquivalente;
+fimFuncao

@@ -1,0 +1,37 @@
+algoritmo ordenarSequencias;
+// Aluno: Felipe Fernandes Brandim (202016201)
+//  Objetivo: Ordenar um conjunto de numeros inteiros
+//  Entrada : um numero inteiro indicando a quantidade de numeros que serão lidos e a sequencia de numeros inteiros após isso
+//  Saída   : Conjunto de numeros inteiros da entrada, em ordem crescente e seguidos por uma quebra de linha
+
+
+principal
+	// Declarações
+	inteiro n;
+	inteiro numeros[9];
+	inteiro i,j,posicaoMenor,menorNumero;
+	// Instruções
+	//ler o valor de n
+	leia(n);
+	//ler a s equencia de numeros inteiros
+	para (i de 0 ate n-1 passo 1)faca
+		leia(numeros[i]);
+	fimPara
+	// ordenar vetor
+	para(i de 0 ate n-1 passo 1)faca
+		//sempre considerar que o menor é o valor que está na posião
+		menorNumero= numeros[i];
+		posicaoMenor= i;
+		para(j de i ate n-1 passo 1) faca
+			se (numeros[j]<menorNumero)entao
+				menorNumero=numeros[j];
+				posicaoMenor=j;
+			fimSe
+		fimPara
+		//neste ponto, descobrimos quem é o menor valor e a posição deste menor valor
+		numeros [posicaoMenor]= numeros[i];
+		numeros[i]=menorNumero;
+		escreval(numeros[i]);
+	fimPara
+
+fimPrincipal
