@@ -1,0 +1,98 @@
+algoritmo ArrecadacoesParaCompraDeItem;
+// Aluno: Felipe Fernandes Brandim - 202016201
+//  Objetivo: Fazer um programa que colete todas as fontes de recursos para a compra de determinado item, em seguida exiba na tela as porcentagens que cada fonte representa para a compra do item.
+//  Entrada : Nomes e valores(ou seja tipos real, inteiro e texto) 
+//  Saída   : Nomes e porcentagens ( valores e porcentagens)
+
+
+principal
+	// Declarações
+	inteiro opcao,N,i;
+	real valoresArrecadados[101];
+	texto fontesDeArrecadacao[101];
+	real custoTotal,totalArrecadado,Porcentagem,porcentagemS,falta,sobra;
+	texto itemDesejado;
+	opcao=0;
+	totalArrecadado=0;
+
+	// Instruções
+	consultaItem(i,N,itemDesejado,totalArrecadado,valoresArrecadados,fontesDeArrecadacao,custoTotal,Porcentagem,falta,sobra,porcentagemS);
+
+	enquanto(opcao!=2)faca
+		imprimeMenu();
+		leia(opcao);
+		escolha(opcao)
+		caso 1
+			limpaTela();
+			consultaItem(i,N,itemDesejado,totalArrecadado,valoresArrecadados,fontesDeArrecadacao,custoTotal,Porcentagem,falta,sobra,porcentagemS);
+			interrompa;
+		caso 2
+			limpaTela();
+			escreval("Obrigado, e até a próxima!");
+			interrompa;
+		outroCaso
+			escreval("Erro,o menu só atende os números 1 e 2.");	
+		fimEscolha
+	fimEnquanto
+	escreval("");
+fimPrincipal
+
+
+procedimento imprimeMenu()
+	escreval("-----------------------------------");
+	escreval("Deseja fazer uma nova consulta ? ");
+	escreval("1- Sim,consultar Novo Item");
+	escreval("2- Não,Encerrar o programa");
+	escreval("-----------------------------------");
+fimProcedimento
+
+procedimento consultaItem(inteiro i, inteiro N,texto itemDesejado, real totalArrecadado,real valoresArrecadados[],texto fontesDeArrecadacao[],real custoTotal,real Porcentagem,real falta,real sobra,real PorcentagemS)
+
+	escreval ("Digite o nome do item desejado e em seguida, o quanto ele custa: ");
+	leia(itemDesejado);
+	leia(custoTotal);
+	limpaTela();
+	escreval(itemDesejado,":",custoTotal::2);
+	escreval("Quantas arrecadações foram feitas? ");
+	leia(N);
+	para (i de 1 ate N passo 1)faca
+		escreval("Digite em sequencia o nome da ",i,"º arrecadação e o valor obtido nela: ");
+		leia(fontesDeArrecadacao[i]);
+		leia(valoresArrecadados[i]);
+		totalArrecadado= (totalArrecadado+valoresArrecadados[i]);
+		Porcentagem=valoresArrecadados[i]*100/custoTotal;
+		escreval(fontesDeArrecadacao[i],":",valoresArrecadados[i]::2,"|"," ","Total Arrecadado: ",totalArrecadado::2);
+		escreval("Porcentagem da contribuição individual pro valor Total: ",fontesDeArrecadacao[i]," ",Porcentagem::1,"%");
+		escreval("");	
+	fimPara
+	
+	se(totalArrecadado<custoTotal)entao
+		escreval("Está faltando ",porcentagemFaltando(totalArrecadado,custoTotal)::1,"% para obtermos o valor do item desejado.");
+		falta= custoTotal-totalArrecadado;
+		escreval(porcentagemFaltando(totalArrecadado,custoTotal)::1,"%"," ","Correspondente a R$ ",falta::2);
+	senao
+		escreval("Alcançamos a meta !!");
+		se(totalArrecadado>custoTotal)entao
+			sobra=totalArrecadado-custoTotal;
+			escreval("Sobraram ",porcentagemSobrando(totalArrecadado,custoTotal)::1,"%"," ","Correspondente a R$ ",sobra::2);
+		fimSe
+	fimSe
+	totalArrecadado=0;
+
+fimProcedimento
+
+funcao real porcentagemFaltando(real totalArrecadado,real custoTotal)
+	real porcentagem;
+	porcentagem= (totalArrecadado*100/custoTotal);
+	porcentagem= 100-porcentagem;
+
+	retorna porcentagem;
+fimFuncao
+
+funcao real porcentagemSobrando(real totalArrecadado,real custoTotal)
+	real porcentagemS;
+	porcentagemS= (custoTotal*100/totalArrecadado);
+	porcentagemS= 100-porcentagemS;
+
+	retorna porcentagemS;
+fimFuncao
